@@ -1,0 +1,57 @@
+﻿<Page x:Class="PersonalMediaLibrary.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Регистрация"
+      Background="{StaticResource BackgroundBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#FF000000" Height="40">
+            <TextBlock Text="Личная медиатека" 
+                       Foreground="{StaticResource AccentLightBrush}" 
+                       FontFamily="Roboto" FontSize="14"
+                       VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </Border>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Center" 
+                        HorizontalAlignment="Center"
+                        Width="380"
+                        Margin="0,20">
+
+                <Image Source="logo.png" 
+                       Width="100" Height="100" 
+                       Margin="0,0,0,10"
+                       HorizontalAlignment="Center"/>
+
+                <TextBlock Text="Регистрация" 
+                           Style="{StaticResource HeaderTextStyle}"/>
+
+                <TextBlock Text="ФИО" Style="{StaticResource LabelStyle}"/>
+                <TextBox x:Name="FullNameTextBox" Style="{StaticResource TextBoxStyle}"/>
+
+                <TextBlock Text="Электронная почта" Style="{StaticResource LabelStyle}"/>
+                <TextBox x:Name="EmailTextBox" Style="{StaticResource TextBoxStyle}"/>
+
+                <TextBlock Text="Пароль" Style="{StaticResource LabelStyle}"/>
+                <PasswordBox x:Name="PasswordBox" Style="{StaticResource PasswordBoxStyle}"/>
+
+                <TextBlock Text="Подтверждение пароля" Style="{StaticResource LabelStyle}"/>
+                <PasswordBox x:Name="ConfirmPasswordBox" Style="{StaticResource PasswordBoxStyle}"/>
+
+                <Button Content="Зарегистрироваться" 
+                        Style="{StaticResource PrimaryButtonStyle}"
+                        Click="OnRegisterClick"/>
+
+                <Button Content="← Назад к входу" 
+                        Style="{StaticResource SecondaryButtonStyle}"
+                        Margin="0,15,0,0"
+                        Click="OnBackToLoginClick"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
